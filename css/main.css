@@ -5,6 +5,7 @@ body{
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;;
+  height: 3000px;
 }
 img{
   display: block;
@@ -20,8 +21,12 @@ a{
 
 /* HEARDER */
 header{
+  /* position fixed를 하면 가로를 최소로 쓰려하기 때문에 최대화해줘야함 */
+  width: 100%;
   background-color: #f6f5f0;
   border-bottom: 1px solid  #c8c8c8;
+  position: fixed;
+  top: 0;
 }
 header > .inner{
   /* 자식 선택자 > 사용 header 자식인 inner만 해당 */
@@ -175,4 +180,17 @@ header .main-menu .item .item__contents .contents__texture h4{
 header .main-menu .item .item__contents .contents__texture p{
   margin: 4px 0 14px;
   color: #669900;
+}
+header .badges{
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge{
+  border-radius: 10px;
+  /* 깍은 부분이 넘치지 않도록 정의 */
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
 }

@@ -19,3 +19,9 @@ searchInputEl.addEventListener('blur', function(){
   // 해당 element에 html 요소 지정
   searchInputEl.setAttribute('placeholder',''); 
 });
+
+const badgeEl = document.querySelector('header .badges');
+//윈도우 객체, 브라우저 창. 화면 자체 
+window.addEventListener('scroll', function(){
+  console.log('scroll!');
+});
