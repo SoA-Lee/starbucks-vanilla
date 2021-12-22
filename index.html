@@ -26,7 +26,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./css/main.css" />
 
+  <!-- lodash 부하분산 함수 처리 오픈소스 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap 애니메이션 연결 라이브러리 오픈소스 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js" integrity="sha512-gWlyRVDsJvp5kesJt4cSdPPLZIBdln/uSwzYgUicQcbTgRNQE4QhP5KUBIYlLYLkiKIQiuD7KUMHzqGNW/D2bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -368,6 +371,26 @@
         </div>
       </div>
   </header>
+
+  <!-- VISUAL -->
+  <section class="visual">
+    <!-- 가운데 정렬 시킬 inner -->
+    <div class="inner">
+
+      <div class="title">
+        <img src="./images/visual_title.png" alt="STARRBUCKS DELIGHTFUL START TO THE YEARS"/>
+        <!-- 동작하지 않는 페이지 링크 넣기 -->
+        <!-- css에서 먼저 선언한 후, class명 수정해주기 -->
+        <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
+      </div>
+      <img src="./images/visual_cup1.png" alt="new OATMEAL LATTE" class="cup1 image"/>
+      <img src="./images/visual_cup1_text.png" alt="오트밀 라떼" class="cup1 text"/>
+      <img src="./images/visual_cup2.png" alt="new STARRBUCKS CARAMEL CRUMBLE MOCHA" class="cup2 image"/>
+      <img src="./images/visual_cup2_text.png" alt="스타벅스 카라멜 크럼블 모카" class="cup2 text"/>
+      <img src="./images/visual_spoon.png" alt="Spoon" class="spoon"/>
+
+    </div>
+  </section>
   
 </body>
 </html>

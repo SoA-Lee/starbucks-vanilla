@@ -21,7 +21,28 @@ searchInputEl.addEventListener('blur', function(){
 });
 
 const badgeEl = document.querySelector('header .badges');
-//윈도우 객체, 브라우저 창. 화면 자체 
-window.addEventListener('scroll', function(){
-  console.log('scroll!');
-});
+// 윈도우 객체, 브라우저 창. 화면 자체 
+// 300 => 0.3초를 의미함
+// 함수 수십개가 한번에 실행되는걸 0.3초 단위로 부하분산. throttle <- lodash 제공
+// _.throttle(함수, 시간)
+window.addEventListener('scroll', _.throttle(function(){
+  console.log(window.scrollY);
+  if(window.scrollY > 500){
+    // 배지 숨기기
+    badgeEl.style.display = 'none';
+    // gsap.to(요소, 지속시간, 옵션); 동작시키는 함수
+    gsap.to(badgeEl, .6, {
+      // 투명도. 시각적으로만 사라짐
+      opacity: 0,
+      display: 'none'
+    });
+  }else{
+    // 배지 보이기
+    badgeEl.style.display = 'block';
+    gsap.to(badgeEl, .6, {
+      // 투명도
+      opacity: 1,
+      display: 'block'
+    });
+  }
+},300));
