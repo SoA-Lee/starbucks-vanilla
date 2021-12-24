@@ -299,3 +299,93 @@ header .badges .badge{
   bottom: 0;
   left: 275px;
 }
+.visual .fade-in{
+  /* 투명도 0으로 미리 만들어 놓기 */
+  opacity: 0;
+}
+
+/* NOTICE */
+.notice {
+  
+}
+.notice .notice-line {
+  position: relative;
+}
+.notice .notice-line .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+.notice .notice-line .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+.notice .notice-line .inner {
+  /* 상호작용할 수 있도록, inner부분만 높이 지정하면 상위부분 auto */
+  height: 62px;
+  display: flex;
+}
+.notice .notice-line .inner__left {
+  width: 60%;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner__left h2 {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .notice-line .inner__left .swiper-container {
+  height: 62px;
+  background-color: orange;
+  /* display: flex 사용시 가로 너비 없을 경우, 최대한 줄어든다. */
+  /* 늘리기 위해서 flex-grow로 최대한 넓히기 */
+  flex-grow: 1;
+}
+.notice .notice-line .inner__left .notice-line__more {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  /* 수평 가운데 */
+  justify-content: center;
+  /* 수직 가운데 */
+  align-items: center;
+}
+.notice .notice-line .inner__left .notice-line__more .material-icons {
+  color: #fff;
+  font-size: 30px;
+}
+.notice .notice-line .inner__right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.notice .notice-line .inner__right h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+.notice .notice-line .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+}
+.notice .notice-line .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
+}
