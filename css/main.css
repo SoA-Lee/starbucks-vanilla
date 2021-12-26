@@ -305,31 +305,29 @@ header .badges .badge{
 }
 
 /* NOTICE */
-.notice {
-  
-}
 .notice .notice-line {
   position: relative;
 }
 .notice .notice-line .bg-left {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 50%;
   height: 100%;
   background-color: #333;
-}
-.notice .notice-line .bg-right {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
+}
+.notice .notice-line .bg-right {
   width: 50%;
   height: 100%;
   background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .notice .notice-line .inner {
   /* 상호작용할 수 있도록, inner부분만 높이 지정하면 상위부분 auto */
   height: 62px;
+  z-index: 1;
   display: flex;
 }
 .notice .notice-line .inner__left {
@@ -347,10 +345,17 @@ header .badges .badge{
 }
 .notice .notice-line .inner__left .swiper-container {
   height: 62px;
-  background-color: orange;
   /* display: flex 사용시 가로 너비 없을 경우, 최대한 줄어든다. */
   /* 늘리기 위해서 flex-grow로 최대한 넓히기 */
   flex-grow: 1;
+}
+.notice .notice-line .inner__left .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner__left .swiper-slide a{
+  color: #fff;
 }
 .notice .notice-line .inner__left .notice-line__more {
   width: 62px;
@@ -388,4 +393,25 @@ header .badges .badge{
 }
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
+}
+.notice .promotion {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+.notice .promotion .swiper-container {
+  /* width: 2477px; */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  background-color: orange;
+  text-align: center;
+  font-size: 200px;
+  /* 가운데 정렬_화면 축소/확대 시에도 */
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2); /* 절반만큼 다시 땡겨 옴 */
+}
+.notice .promotion .swiper-slide {
+
 }
