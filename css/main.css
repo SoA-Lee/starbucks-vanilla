@@ -398,6 +398,13 @@ header .badges .badge{
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height .4s;
+  /* 넘치는 부분은 잘라버림 -> 요소의 크기가 줄어들면서 넘치지 않음 */
+  overflow: hidden;
+}
+.notice .promotion.hide {
+  /* 일치 선택자 사용이기 때문에 띄어쓰기 하면 안됨 */
+  height: 0;
 }
 .notice .promotion .swiper-container {
   /* width: 2477px; */
