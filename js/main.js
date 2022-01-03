@@ -119,3 +119,16 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyEls = document.querySelector('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+  // 섹션 감시할 때 필요한 옵션 지정하도록하는 함수
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8, // 해당 부분에 걸리면 실행된다.
+
+    })
+    .setClassToggle()
+    .addTo();
+});
