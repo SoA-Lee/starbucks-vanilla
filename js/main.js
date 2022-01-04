@@ -82,6 +82,16 @@ new Swiper('.promotion .swiper-container',{
     nextEl: '.promotion .swiper-next'
   }
 });
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
@@ -120,15 +130,25 @@ floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
 
-const spyEls = document.querySelector('section.scroll-spy');
+/**
+ * 요소가 화면에 보여짐 여부에 따른 요소 관리
+ */
+// 관리할 요소들 검색!
+const spyEls = document.querySelectorAll('section.scroll-spy')
+// 요소들 반복 처리!
 spyEls.forEach(function (spyEl) {
-  // 섹션 감시할 때 필요한 옵션 지정하도록하는 함수
   new ScrollMagic
-    .Scene({
+    .Scene({ // 감시할 장면(Scene)을 추가
       triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: .8, // 해당 부분에 걸리면 실행된다.
-
+      triggerHook: .8 // 화면의 80% 지점에서 보여짐 여부 감시
     })
-    .setClassToggle()
-    .addTo();
-});
+    .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
+    .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
+})
+
+
+/**
+ * 올해가 몇 년도인지 계산
+ */
+const thisYear = document.querySelector('.this-year')
+thisYear.textContent = new Date().getFullYear()
