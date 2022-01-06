@@ -21,6 +21,8 @@ searchInputEl.addEventListener('blur', function(){
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+
 // 윈도우 객체, 브라우저 창. 화면 자체 
 // 300 => 0.3초를 의미함
 // 함수 수십개가 한번에 실행되는걸 0.3초 단위로 부하분산. throttle <- lodash 제공
@@ -36,6 +38,11 @@ window.addEventListener('scroll', _.throttle(function(){
       opacity: 0,
       display: 'none'
     });
+    // 버튼 보이기!
+    gsap.to(toTopEl, .2, {
+      x: 0 // 보이게 하기 위해서 제자리
+    });
+
   }else{
     // 배지 보이기
     badgeEl.style.display = 'block';
@@ -44,8 +51,19 @@ window.addEventListener('scroll', _.throttle(function(){
       opacity: 1,
       display: 'block'
     });
+    // 버튼 숨기기!
+    gsap.to(toTopEl, .2, {
+      x: 100 // 안 보이게 하기 위해서 오른쪽으로 100 이동
+    });
   }
 },300));
+
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+})
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 // fadeEls 갯수만큼 함수로 실행이 된다.
@@ -147,8 +165,6 @@ spyEls.forEach(function (spyEl) {
 })
 
 
-/**
- * 올해가 몇 년도인지 계산
- */
+/* 올해가 몇 년도인지 계산 */
 const thisYear = document.querySelector('.this-year')
 thisYear.textContent = new Date().getFullYear()
